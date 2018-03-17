@@ -1,9 +1,14 @@
 /*
+=====================
+FONTS
+=====================
+*/
 
+
+/*
 =====================
 BODY, HTML
 =====================
-
 */
 body {
   font-weight: 400;
@@ -15,11 +20,9 @@ body,
   min-height: 100%;
 }
 /*
-
 =====================
 NAVBAR
 =====================
-
 */
 .navbar {
   border: none;
@@ -49,11 +52,9 @@ NAVBAR
   }
 }
 /*
-
 =====================
 UNIVERSAL SECTION STYLES
 =====================
-
 */
 .section {
   position: relative;
@@ -164,7 +165,6 @@ UNIVERSAL SECTION STYLES
 =====================
 INTRO
 =====================
-
 */
 #intro {
   position: relative;
@@ -240,11 +240,9 @@ INTRO
   position: relative;
 }
 /*
-
 =====================
 ABOUT
 =====================
-
 */
 .progress-title {
   text-align: left;
@@ -312,11 +310,9 @@ ABOUT
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 /*
-
 =====================
 SERVICES
 =====================
-
 */
 .services .icon {
   font-size: 60px;
@@ -334,11 +330,9 @@ SERVICES
   text-align: left;
 }
 /*
-
 =====================
 WORKS / REFERENCES
 =====================
-
 */
 #filter {
   text-align: center;
@@ -488,26 +482,9 @@ WORKS / REFERENCES
   }
 }
 /*
-
-=====================
-CUSTOMERS
-=====================
-
-*/
-.customer {
-  text-align: center;
-}
-.customer img {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-/*
-
 =====================
 SHOWCASE
 =====================
-
 */
 .showcase {
   position: relative;
@@ -537,104 +514,11 @@ SHOWCASE
   font-weight: 100;
   font-size: 41px;
 }
+
 /*
-
-=====================
-TESTIMONIALS
-=====================
-
-*/
-.testimonials {
-  padding: 0;
-  margin: 40px 0;
-  text-align: left;
-}
-.testimonials .item {
-  list-style-type: none;
-  margin: 0 5px;
-  background: #fff;
-  padding-bottom: 60px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.testimonials .item .testimonial {
-  position: relative;
-  padding: 20px;
-}
-.testimonials .item .testimonial:before,
-.testimonials .item .testimonial:after {
-  content: " ";
-  display: table;
-}
-.testimonials .item .testimonial:after {
-  clear: both;
-}
-.testimonials .item .testimonial:before,
-.testimonials .item .testimonial:after {
-  content: " ";
-  display: table;
-}
-.testimonials .item .testimonial:after {
-  clear: both;
-}
-.testimonials .item .testimonial .text {
-  color: #999999;
-  margin-bottom: 40px;
-}
-.testimonials .item .testimonial .bottom {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 20px;
-  height: 50px;
-}
-.testimonials .item .testimonial .bottom .icon {
-  color: #4fbfa8;
-  font-size: 30px;
-  float: left;
-  width: 20%;
-}
-@media (max-width: 350px) {
-  .testimonials .item .testimonial .bottom .icon {
-    display: none;
-  }
-}
-.testimonials .item .testimonial .name-picture {
-  float: right;
-  width: 80%;
-  text-align: right;
-}
-.testimonials .item .testimonial .name-picture h5 {
-  font-size: 16px;
-  text-transform: uppercase;
-}
-.testimonials .item .testimonial .name-picture p {
-  color: #999999;
-  margin: 0;
-  font-size: 14px;
-}
-.testimonials .item .testimonial .name-picture img {
-  float: right;
-  width: 60px;
-  border-radius: 30px;
-  margin-left: 10px;
-}
-@media (max-width: 350px) {
-  .testimonials .item .testimonial .name-picture {
-    width: 100%;
-  }
-}
-/*
-
 =====================
 CONTACT
 =====================
-
 */
 .contact {
   background: #fff;
@@ -647,11 +531,9 @@ CONTACT
   margin-top: 20px;
 }
 /*
-
 =====================
 CONTACT - WORDPRESS
 =====================
-
 */
 div.wpcf7 div.wpcf7-response-output {
   padding: 15px;
@@ -725,21 +607,9 @@ div.wpcf7 .wpcf7-form p {
   display: none;
 }
 /*
-
-=====================
-MAP
-=====================
-
-*/
-#map {
-  height: 400px;
-}
-/*
-
 =====================
 FOOTER
 =====================
-
 */
 #footer {
   background: #222222;
