@@ -637,6 +637,9 @@ FOOTER
 #footer p.social a.facebook {
   background-color: #4460ae;
 }
+#footer p.social a.twitter {
+  background-color: #1DA1F2;
+}
 #footer p.social a.gplus {
   background-color: #c21f25;
 }
