@@ -688,12 +688,28 @@ _________________________________________________________ -->
                                     </div>
                                 </a>
 
-                                <div class="sr-only reference-description" data-images="img/uni.png">
-
-                                    <p class="buttons">
-                                        <a class="btn btn-primary" target="_blank" href="https://xn--bdk.ws/"><i class="fa fa-globe"></i> Bezoek website</a>
-                                        <a class="btn btn-primary" target="_blank" href="https://twitter.com/mattjay/status/965650109923983360"><i class="fa fa-download"></i> Voorbeeld misbruik</a>
-                                    </p>
+                                <div class="sr-only reference-description" data-images="img/enc.jpg,img/enc2.jpg,img/enc3.jpg">
+                                  <h3>Nieuwe wet</h3>
+                                  <p>Op 25 mei 2018 treedt de Algemene Verordening Gegevensbescherming (AVG) in Nederland in werking. Organisaties die over persoonsgegevens beschikken, mogen deze na die datum niet meer in alle gevallen onversleuteld bewaren. </p>
+                                  
+                                  <h3>Encryptie</h3>
+                                  <p>Een manier om te voorkomen dat persoonsgegevens openbaar worden gemaakt, is encryptie. Encryptie is het versleutelen van data aan de hand van een wiskundige formule, ook wel een algoritme genoemd. Simpel gezegd, als er een naam van iemand ingevoerd wordt, dan wordt dit opgeslagen als lange reeks cijfers en letters. Uit deze combinatie kan niet meer worden opgemaakt dat het om de naam van de desbetreffende persoon gaat.<br>
+                                  Bij versleuteling wordt gebruik gemaakt van een sleutel. De versleutelde gegevens zijn alleen terug te halen als u de sleutel weer wordt toegepast. Het terughalen van die versleutelde gegevens wordt dan weer decryptie genoemd.<br>
+                                  Niet elk algoritme is even waterdicht. Zo is het DES algoritme al lang niet veilig meer en is een AES algoritme gebruikelijk en biedt deze mtehode voldoende beveiligingvoor de toekomst. Ook het Camellia biedt voldoende beveiligingvoor de toekomst. Bij het gebruik van algoritmen geldt dat deze volgens de stand van de techniek voldoende beveiliging moeten bieden. Concreet betekent dit dat periodiek beoordeeld moet worden of een gebruikte methode nog voldoende bescherming biedt.</p>
+                                  <h3>Zoeken</h3>
+                                  <p>Zoeken in een database is geen probleem. Maar hoe kun je gegegevens encrypten en deze gegevens toch nog gebruiken in zoekopdrachten?
+                                  <br>
+                                  Een mogelijke oplossing is om de gegevens die je gaat encrypten, ook op te slaan in een gehashte kolom. Dit noemen we blind indexeren. De database heeft geen mogelijkheid om de geëncrypte gegevens of de gehashte gegevens te herleiden. Bij zoekopdrachten wordt de gezochte tekst gehasht en vergeleken met de blinde index. Zie de link hieronder voor uitgebreide uitleg.
+                                  </p>
+                                  
+                                  <h3>Links</h3>
+                                  <ul>
+                                    <li><a target="_blank" href="https://www.rendement.nl/nieuws/id20086-per-25-mei-2018-persoonsgegevens-versleutelen.html">Nieuwe wetgeving</a>
+                                    </li>
+                                    <li><a target="_blank" href="http://www.heijinkenmeure.nl/beveiliging-persoonsgegevens-passende-maatregelen-rekening-houdend-stand-techniek/">Passende maatregelen</a></li>
+                                    <li><a target="_blank" href="https://blog.databyte.nl/blog/versleuteling-van-bedrijfsgegevens-best-practices">Best practices</a></li>
+                                    <li><a target="_blank" href="https://www.sitepoint.com/how-to-search-on-securely-encrypted-database-fields/#solution">Search encrypted data</a></li>
+                                  </ul>
                                 </div>
                             </div>
                         </div>
@@ -709,12 +725,50 @@ _________________________________________________________ -->
                                     </div>
                                 </a>
 
-                                <div class="sr-only reference-description" data-images="img/uni.png">
-
-                                    <p class="buttons">
-                                        <a class="btn btn-primary" target="_blank" href="https://xn--bdk.ws/"><i class="fa fa-globe"></i> Bezoek website</a>
-                                        <a class="btn btn-primary" target="_blank" href="https://twitter.com/mattjay/status/965650109923983360"><i class="fa fa-download"></i> Voorbeeld misbruik</a>
-                                    </p>
+                                <div class="sr-only reference-description" data-images="img/inj1.jpg,img/inj2.jpg,img/inj3.jpg">
+                                  <h3>Tips voor veilig programmeren</h3>
+                                  <p>In mijn lessen heb ik een aantal tips voor verbeterde security bij het programmeren voor het internet besproken.Hier bespreek ik een paar voorbeelden.</p>
+                                  <h3>Database wachtwoord</h3>
+                                  <p>Als iemand je broncode kan bekijken en de inloggegevens voor de database staan in je code, dan is je probleem nog groter. De hacker kan dan ook direct bij je database. Gebruik deze stappen om dit te verbeteren:
+                                  </p>
+                                  <ol>
+                                  <li>Verstop je database credentials</li>
+                                  <li>Gebruik defines om de gegevens in te zetten</li>
+                                  <li>Zet deze in een file/dir buiten je htdocs directory</li>
+                                  <li>Pas in je php.ini het include-path aan om dit bestand te includen</li>
+                                  </ol>
+                                  <p>Een hacker die in je htdocs directory komt, heeft niet direct ook de rechten om daarbuiten te kijken. Daarom is dit een extra hindernis, die je data beveiligt.
+                                  </p>
+                                  <h3>Wachtwoorden versleutelen</h3>
+                                  <p>Als je database wordt buitgemaakt, wil je niet dat alle wachtwoorden ook bekend worden. Je kunt het gebruikers verwijten dat ze overal hetzelfde wachtwoord gebruiken, maar als developer kun je er voor zorgen dat dit geen probleem oplevert.<br>
+                                  Gebruik hiervoor geen MD5. Ook al is dit een bekende hashingmethode, het is niet langer veilig. Het probleem is dat het te snel is (brute force risico) en dat er collisions optreden, dus meerdere wachtwoorden leveren dezelfde hash op.<br>
+                                  Dit werkt wel:
+                                  </p>
+                                  <ol>
+                                   <li>Maak in je database een user tabel</li>
+                                  <li>Gebruik hier een kolom om de hashes van wachtwoorden in op te slaan. (deze zijn altijd 60 karakters lang)</li>
+                                  <li>Gebruik in PHP een INSERT met de password_hash functie om een paar gebruikers met een versleuteld wachtwoord op te slaan.</li>
+                                  <li>Gebruik de password_verifyfunctie om een gebruiker te laten inloggen op je site.</li>
+                                  </ol>
+                                  <p>De password hash functie zal bij iedere nieuwe PHP versie worden bijgewerkte met een geschikte hashingmethode.
+                                  </p>
+                                  <h3>SQL injection tegengaan</h3>
+                                  <p>SQL Injection is een techniek waarbij een aanvaller een SQL commando maakt of verandert om zo meer gegevens te zien, in te loggen, of systeemcommando's uit te voeren. Dit wordt gedaan door de gebruikersinvoer te combineren met extra tekens om een SQL query te schrijven.<br>Bij deze een paar tips om dit tegen te gaan:</p>
+                                  <ol>
+                                    <li>Maak een databasegebruiker met beperkte rechten. Dit zorgt er voor dat heel veel kwalijke query's worden voorkomen.</li>
+                                    <li>Prepare en execute: prepared statements gebruiken als bescherming</li>
+                                    <li>Bindparam / bindvalue: Geef de invoer als parameters mee</li>
+                                  </ol>
+                                  <p>Hiermee kan SQL injectie niet meer worden toegepast. Alle invoer wordt als parameter gezien en niet meer als onderdeel van de query. Ook wordt het datatype meegegeven en er kan dus geen tekst worden doorgegeven als er een getal wordt verwacht. Zie de links voor uitgebreide uitleg.</p>
+                                  
+                                  
+                                  <h3>Links</h3>
+                                  <ul>
+                                    <li><a target="_blank" href="http://php.net/manual/en/security.database.sql-injection.php">PHP site over SQL injectie</a>
+                                    </li>
+                                    <li><a target="_blank" href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#LineCommentAttacks">Voorbeelden SQL injectie</a></li>
+                                    <li><a target="_blank" href="https://php.earth/docs/security/passwords">How to voor versleutelde wachtwoorden</a></li>
+                                  </ul>
                                 </div>
                             </div>
                         </div>
