@@ -26,7 +26,10 @@
 
     <meta name="keywords" content="Portfolio Security Privacy Ethiek Chris Stalman Windesheim">
 
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700,100%7CRoboto:400,700,300,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100%7CRoboto:400,700,300,100' rel='stylesheet' type='text/css'>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <!-- Bootstrap and Font Awesome css -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -51,7 +54,8 @@
 
     <!-- Mordernizr -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-
+    
+    
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
@@ -60,8 +64,7 @@
 
 <body data-spy="scroll" data-target="#navigation" data-offset="120">
 
-    <!-- *** NAVBAR ***
-_________________________________________________________ -->
+    <!-- *** NAVBAR *** -->
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
         <div class="container">
@@ -79,6 +82,8 @@ _________________________________________________________ -->
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#intro">Intro</a>
+                    </li>
+                    <li><a href="#lesson">Good practices</a>
                     </li>
                     <li><a href="#about">Over</a>
                     </li>
@@ -100,8 +105,7 @@ _________________________________________________________ -->
     <div id="all">
 
 
-        <!-- *** INTRO IMAGE ***
-_________________________________________________________ -->
+        <!-- *** INTRO IMAGE *** -->
         <div id="intro" class="clearfix">
             <div class="item">
                 <div class="container">
@@ -111,7 +115,7 @@ _________________________________________________________ -->
                                 <img src="img/logo-big.png" alt="logo" width="130">
                             </div>-->
                             <h1 data-animate="fadeInDown">Security, privacy en ethiek</h1>
-                            <h2 data-animate="slideInUp">Drie onderwerpen die nauw met elkaar samenhangen. Hier vind je artikelen, reviews en uitgewerkte thema's over deze onderwerpen.</h2>
+                            <h2 data-animate="slideInUp">Drie onderwerpen die nauw met elkaar samenhangen. Hier vind je een aantal good practices over veilig programmeren, artikelen, reviews en uitgewerkte thema's over deze onderwerpen.</h2>
                         </div>
                     </div>
                 </div>
@@ -119,9 +123,210 @@ _________________________________________________________ -->
         </div>
 
         <!-- *** INTRO IMAGE END *** -->
+        
+        <div class="section" id="lesson">
+            <div class="container">
+                <div class="row">
 
-        <!-- *** ABOUT ***
-_________________________________________________________ -->
+                    <div class="col-sm-12">
+                        <h2 class="title" data-animate="fadeInDown">Good practices</h2>
+                        <p class="lead" data-animate="fadeInUp">Hieronder zijn een aantal tips te vinden over veilig programmeren op het web. Deze zijn in mijn lessen behandeld.</p>
+                    </div>
+
+                    <div class="col-sm-12">
+
+                        <div class="row">
+                            <p><button class="btn btn-lg btn-round-lg btn-succes" data-toggle="modal" data-target=".indexof">Content afschermen (index of)</button></p>
+                            <p><button class="btn btn-lg btn-round-lg" data-toggle="modal" data-target=".htmlentities">Gebruikersinvoer (htmlentities)</button></p>
+                            <p><button class="btn btn-lg btn-round-lg" data-toggle="modal" data-target=".login-hide">DB: login verbergen</button></p>
+                            <p><button class="btn btn-lg btn-round-lg" data-toggle="modal" data-target=".rights">DB: Beperkte rechten</button></p>
+                            <p><button class="btn btn-lg btn-round-lg" data-toggle="modal" data-target=".passwords">Versleutelen wachtwoorden</button></p>
+                            <p><button class="btn btn-lg btn-round-lg" data-toggle="modal" data-target=".injection">SQL injection tegengaan</button> </p>                           
+                       </div>
+                       <div class="col-sm-12">
+                            <!-- Modals -->
+
+                            <!-- indexof -->
+                            <div class="modal fade in indexof" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="apache secure" src="img/secure-apache.png" style="width: 140px; height: 140px;">
+                                        <h2>Content afschermen (index of)</h2>
+                                        <p class="text-left">Als in een publieke html map geen index.html bestand aanwezig is, dan wordt standaard de directory listing getoond. Dat noemen we een open directory. Op het Internet zijn heel wat van deze open dirs te vinden. Zoek maar eens op 'index of'. Dit is namelijk de tekst die bovenaan de pagina van een open dir komt te staan.</p>
+                                        <p class="text-left">Hiermee geef je bezoekers van deze pagina heel veel informatie. Welke bestanden zijn er, welke mappen, wat voor extensies. Bovendien zijn deze files ook te downloaden. Het is dus belangrijk om dit te voorkomen.</p>
+                                        <p>Dit doe je als volgt:
+                                        <ol class="text-left">
+                                        <li>Open de Apache configuratie in een teksteditor. </li>
+                                        <li>Zoek naar de tekst <em>&lt;Directory "C:/xampp/htdocs"&gt;</em>, of naar het pad waar jouw bestanden staan.</li>
+                                        <li>In dit blok voeg je deze regel toe: <br>
+                                            Options -Indexes</li>
+                                        </ol>
+                                        Dat is alles! Een simpele manier om je website een beetje veiliger te maken.</p>
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END indexof -->
+                          
+                          <!-- htmlentities -->
+                          <div class="modal fade in htmlentities" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="user input" src="img/user-input.png" style="width: 140px; height: 140px;">
+                                        <h2>Gebruikersinvoer (htmlentities)</h2>
+                                        <p class="text-left">Vertrouw nooit gebruikersinput! Waarom niet?
+                                        <ul class="text-left">
+                                        <li>Gebruikers vullen per ongeluk onzin in</li>
+                                        <li>Gebruikers vullen expres onzin in</li>
+                                        <li>Gebruikers vullen code in om de site te hacken</li>
+                                        </ul>
+                                        </p>
+                                        <p class="text-left">Omdat de browser tekst probeert te interpreteren, wordt alles tussen &lt; en &gt; gezien als een html tag. Wat kun je hiertegen doen?<br>
+                                        De functie <em>htmlentities()</em> in PHP zorgt er voor dat deze tekens worden omgezet, bijvoorbeeld naar &amp;lt; en &amp;gt;.
+                                        </p>
+                                        <p class="text-left">Doe dit altijd als je tekst weergeeft die is ingevoerd door een gebruiker. En doe dit altijd zo laat mogelijk, pas op het moment dat je de tekst op het scherm wilt tonen. Stop geen strings met escape-tekens in je database! Dan kun je niet meer zoeken op deze tekst. En wat als je geen HTML wilt, maar CSV of JSON? Dan heb je alleen maar last van de escape-tekens.</p>
+
+                                        </p>Lees verder over het voorkomen van SQL injection!</p>
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END htmlentities -->
+
+                          <!-- db credentials -->
+                            <div class="modal fade in login-hide" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="db user" src="img/db_user.jpg" style="width: 140px; height: 140px;">
+                                        <h2>Verstop je database credentials</h2>
+                                        <p class="text-left">Als een hacker toegang weet te krijgen tot jouw php-code, dan heb je al een groot probleem. Maar als in deze code ook de gebruikersnaam en het wachtwoord van je database staan, dan is het probleem nog groter. Naast je php-code, kan deze hacker opeens bij al jouw data! Voor een klant is de data meestal veel belangrijker dan de site die hier iets mee doet. Het is dus belangrijk om te voorkomen dat iemand de database vrij kan benaderen.</p>
+                                        <p class="text-left">Dit doe je als volgt:
+                                        <ol class="text-left">
+                                        <li>Gebruik defines om de gegevens (host, user, password) in te zetten</li>
+                                        <li>Zet deze in een php-bestand <em>buiten</em> je htdocs directory</li>
+                                        <li>Pas in je php.ini het include-path aan om dit bestand te kunnen includen</li>
+                                        </ol>
+                                        </p>
+                                        <p class="text-left">Een hacker die in je htdocs directory komt, heeft niet direct ook de rechten om daarbuiten te kijken. Daarom is dit een extra hindernis, die je data beveiligt.
+                                        </p>Lees verder over het beperken van databaserechten!</p>
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END db credentials -->
+                          
+                          <!-- db rechten -->
+                            <div class="modal fade in rights" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="db user" src="img/acces.jpg" style="width: 140px; height: 140px;">
+                                        <h2>Maak een database gebruiker met beperkte rechten</h2>
+                                        <p class="text-left">De standaard database gebruiker is root, zonder wachtwoord. Als je root gebruikt om vanaf je website met de database te verbinden, dan heb je alle mogelijke rechten op de database. Dus niet alleen select, insert, update en delete, maar ook bijvoorbeeld drop database. Als het iemand lukt om malafide code op je site uit te voeren en hij kan direct alles op je database, dan is dat een enorm risico.</p>
+                                        <p class="text-left">Dit kun je voorkomen door een nieuwe user aan te maken, die je alleen de rechten geeft die nodig zijn voor de site. Binnen phpMyAdmin kun je eenvoudig een nieuwe gebruiker aanmaken. Ook kun je daar de rechten instellen. <br>
+                                        Heb je hier geen toegang toe, dan kun je de volgende SQL commmando's gebruiken:
+                                        <ol class="text-left">
+                                        <li><em>CREATE USER 'user'@'localhost' IDENTIFIED BY 'new_password'</em>, om  een gebruiker aan te maken</li>
+                                        <li><em>GRANT SELECT ON my_db.* TO 'user@'localhost'</em>, om rechten toe te kennen</li>
+                                        <li><em>REVOKE SELECT ON my_db.* FROM 'user@'localhost'</em>, om rechten in te trekken</li>
+                                        </ol>
+                                        </p>
+                                        <p class="text-left">Hiermee kan een hacker die toegang heeft gekregen tot je database alleen maar gegevens zien en niets aanpassen!</p>
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END db rechten -->
+                          
+                          <!-- wachtwoorden -->
+                            <div class="modal fade in passwords" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="db user" src="img/app-theme.jpg" style="width: 140px; height: 140px;">
+                                        
+                                        <h2>Wachtwoorden versleutelen</h2>
+                                        <p class="text-left">Als je database wordt buitgemaakt, wil je niet dat alle wachtwoorden ook bekend worden. Je kunt het gebruikers verwijten dat ze overal hetzelfde wachtwoord gebruiken, maar als developer kun je er voor zorgen dat dit geen probleem oplevert. Dit doe je door de wachtwoorden te versleutelen met een hashingmethode. Dat is een versleuteling die je niet meer terug kunt brengen naar het origineel.<br>
+                                        Gebruik hiervoor geen MD5. Ook al is dit een bekende hashingmethode, het is niet langer veilig. Het probleem is dat het te snel is (brute force risico) en dat er collisions optreden, dus meerdere wachtwoorden leveren dezelfde hash op.<br>
+                                        Dit werkt wel:</p>
+                                        <ol class="text-left">
+                                        <li>Maak in je database een user tabel</li>
+                                        <li>Gebruik hier een kolom om de hashes van wachtwoorden in op te slaan. (deze zijn altijd 60 karakters lang)</li>
+                                        <li>Gebruik in PHP een INSERT met de <em>password_hash()</em> functie om een paar gebruikers met een versleuteld wachtwoord op te slaan.</li>
+                                        <li>Gebruik de <em>password_verify()</em> functie om een gebruiker te laten inloggen op je site.</li>
+                                        <li>De password hash functie zal bij iedere nieuwe PHP versie worden bijgewerkte met een geschikte hashingmethode.</li>
+                                        </ol>
+                                        </p>
+                                        <p class="text-left">Als iemand nu in je database kan kijken, kan hij nog niets met de wachtwoorden!</p>
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END wachtwoorden --> 
+                          
+                          <!-- injection -->
+                            <div class="modal fade in injection" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                  <h4 class="modal-title" id="myLargeModalLabel">Veilig programmeren</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="text-center">
+                                        <img class="img-circle" alt="db user" src="img/inj1.jpg" style="width: 140px; height: 140px;">
+                                        <h3>SQL injection tegengaan</h3>
+                                        <p class="text-left">SQL Injection is een techniek waarbij een aanvaller een SQL commando maakt of verandert om zo meer gegevens te zien, in te loggen, of systeemcommando's uit te voeren. Dit wordt gedaan door de gebruikersinvoer te combineren met extra tekens om een SQL query te schrijven.<br>
+                                        Door prepared statements te gebruiken, voorkom je dit. Een prepared statement is een gecompileerde query, die meerdere keren snel achter elkaar uitgevoerd kan worden.<br>
+                                        Door dit te combineren met bind variabelen, wordt SQL injection onmogelijk gemaakt.</p> 
+                                        <p class="text-left">Binnen de PHP PDO database extensie, gebruik je de volgende commando's: <em>$sth = $dbh->prepare($sql)</em> en <em>$sth->binParam(':param1', $param1, PDO:: PARAM_INT)</em>. Dit bereidt de query voor. Deze kun je vervolgens uitvoeren met <em>$sth->execute()</em>.
+                                        <p class="text-left">Hiermee kan SQL injectie niet meer worden toegepast. Alle invoer wordt als parameter gezien en niet meer als onderdeel van de query. Ook wordt het datatype meegegeven en er kan dus geen tekst worden doorgegeven als er een getal wordt verwacht.
+                                    </div>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div>
+                          <!-- END injection -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- *** ABOUT *** -->
         <div class="section" id="about">
             <div class="container">
                 <div class="row">
@@ -160,9 +365,8 @@ _________________________________________________________ -->
         <!-- /#about -->
 
         <!-- *** ABOUT END *** -->
-
-        <!-- *** WERK ***
-_________________________________________________________ -->
+        
+        <!-- *** WERK *** -->
         <div class="section" id="werk">
             <div class="container">
                 <div class="col-sm-12">
