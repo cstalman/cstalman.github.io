@@ -315,9 +315,9 @@
                                         Door prepared statements te gebruiken, voorkom je dit. Een prepared statement is een gecompileerde query, die meerdere keren snel achter elkaar uitgevoerd kan worden.<br>
                                         Door dit te combineren met bind variabelen, wordt SQL injection onmogelijk gemaakt.</p> 
                                         <p class="text-left">Binnen de PHP PDO database extensie, gebruik je de volgende commando's: 
-                                        - <em>$sth = $dbh->prepare($sql)</em> 
-                                        - <em>$sth->bindParam(':param1', $param1, PDO:: PARAM_INT)</em>
-                                        - <em>$sth->execute()</em>
+                                        <br>- <em>$sth = $dbh->prepare($sql)</em> 
+                                        <br>- <em>$sth->bindParam(':param1', $param1, PDO:: PARAM_INT)</em>
+                                        <br>- <em>$sth->execute()</em>
                                         <p class="text-left">Met het eerste statement bereidt je de query voor. Het tweede commando zorgt er voor dat de parameters verwerkt worden en escape tekens worden toegepast waar nodig. De laatste regel voert de query uit.</p>
                                         <p class="text-left">Hiermee kan SQL injectie niet meer worden toegepast. Alle invoer wordt als parameter gezien en niet meer als onderdeel van de query. Ook wordt het datatype meegegeven en er kan dus geen tekst worden doorgegeven als er een getal wordt verwacht.
                                     </div>
